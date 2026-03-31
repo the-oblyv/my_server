@@ -1,13 +1,15 @@
+# The base image that handles the Minecraft installation
 FROM itzg/minecraft-server:latest
 
-# Basic Server Config
+# Environment Variables
 ENV EULA=TRUE
 ENV TYPE=PAPER
+ENV VERSION=LATEST
 ENV MEMORY=2G
 
-# Crossplay Plugins (Geyser + Floodgate)
+# Automatically download Geyser and Floodgate for Crossplay
 ENV PLUGINS=https://geysermc.org
 
-# Expose ports
+# Expose Java (TCP) and Bedrock (UDP) ports
 EXPOSE 25565/tcp
 EXPOSE 19132/udp
