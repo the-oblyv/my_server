@@ -1,12 +1,13 @@
-# Use the itzg/minecraft-server image
 FROM itzg/minecraft-server:latest
 
-# Environment variables for Crossplay
+# Basic Server Config
 ENV EULA=TRUE
 ENV TYPE=PAPER
-ENV PLUGINS=https://geysermc.org
 ENV MEMORY=2G
 
-# Expose Java (TCP) and Bedrock (UDP) ports
+# Crossplay Plugins (Geyser + Floodgate)
+ENV PLUGINS=https://geysermc.org
+
+# Expose ports
 EXPOSE 25565/tcp
 EXPOSE 19132/udp
